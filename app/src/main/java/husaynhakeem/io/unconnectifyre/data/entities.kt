@@ -6,15 +6,15 @@ import android.arch.persistence.room.PrimaryKey
 
 
 @Entity
-class Alarm(
-        @PrimaryKey val id: Int,
+data class Alarm(
+        @PrimaryKey(autoGenerate = true) val id: Int,
         @ColumnInfo(name = "start_time") val startTime: Time,
         @ColumnInfo(name = "end_time") val endTime: Time,
         val connectivities: List<Int>,
         val days: List<Int>)
 
 @Entity
-class Time(
-        val start: Int,
-        val end: Int,
-        @PrimaryKey val id: Int = 0)
+data class Time(
+        @PrimaryKey(autoGenerate = true) val id: Int,
+        val hour: Int,
+        val minute: Int)

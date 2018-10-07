@@ -17,7 +17,7 @@ interface AlarmDao {
     fun findAlarmById(id: Int): LiveData<Alarm>
 
     @Insert
-    fun insertAlarm(alarm: Alarm)
+    fun createAlarm(alarm: Alarm)
 
     @Update
     fun updateAlarm(alarm: Alarm)
