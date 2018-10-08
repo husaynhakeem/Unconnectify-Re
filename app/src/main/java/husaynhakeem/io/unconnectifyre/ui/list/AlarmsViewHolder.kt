@@ -12,8 +12,8 @@ import kotlinx.android.synthetic.main.item_alarm.view.*
 class AlarmsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     fun bind(alarm: Alarm) {
-        itemView.itemAlarmDisconnectsAtValiue.text = alarm.startTime.toString()
-        itemView.itemAlarmReconnectsAtValiue.text = alarm.endTime.toString()
+        itemView.itemAlarmStartTimeValiue.text = alarm.startTime.toString()
+        itemView.itemAlarmEndTimeValue.text = alarm.endTime.toString()
 
         itemView.itemAlarmWifi.enable(alarm.connectivities.contains(Connectivity.WIFI.value))
         itemView.itemAlarmBluetooth.enable(alarm.connectivities.contains(Connectivity.BLUETOOTH.value))

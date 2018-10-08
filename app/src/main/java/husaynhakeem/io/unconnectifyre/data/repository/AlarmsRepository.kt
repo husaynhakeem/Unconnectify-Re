@@ -3,20 +3,27 @@ package husaynhakeem.io.unconnectifyre.data.repository
 import android.arch.lifecycle.LiveData
 import husaynhakeem.io.unconnectifyre.data.database.Alarm
 import husaynhakeem.io.unconnectifyre.data.database.AlarmDao
+import husaynhakeem.io.unconnectifyre.utilities.runOnIoThread
 
 
 class AlarmsRepository(val alarmDao: AlarmDao) {
 
     fun createAlarm(alarm: Alarm) {
-        alarmDao.createAlarm(alarm)
+        runOnIoThread {
+            alarmDao.createAlarm(alarm)
+        }
     }
 
     fun updateAlarm(alarm: Alarm) {
-        alarmDao.updateAlarm(alarm)
+        runOnIoThread {
+            alarmDao.updateAlarm(alarm)
+        }
     }
 
     fun deleteAlarm(alarmId: Int) {
-        alarmDao.deleteAlarm(alarmId)
+        runOnIoThread {
+            alarmDao.deleteAlarm(alarmId)
+        }
     }
 
     fun getAllAlarms(): LiveData<List<Alarm>> = alarmDao.getAllAlarms()

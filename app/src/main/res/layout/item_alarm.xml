@@ -7,31 +7,31 @@
     android:padding="@dimen/space_default">
 
     <TextView
-        android:id="@+id/itemAlarmDisconnectsAtLabel"
+        android:id="@+id/itemAlarmStartTimeLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/disconnects_at_label" />
 
     <TextView
-        android:id="@+id/itemAlarmDisconnectsAtValiue"
+        android:id="@+id/itemAlarmStartTimeValiue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/itemAlarmDisconnectsAtLabel"
+        app:layout_constraintStart_toEndOf="@id/itemAlarmStartTimeLabel"
         tools:text="10:00" />
 
     <TextView
-        android:id="@+id/itemAlarmReconnectsAtLabel"
+        android:id="@+id/itemAlarmEndTimeLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/connects_at_label"
-        app:layout_constraintTop_toBottomOf="@id/itemAlarmDisconnectsAtLabel" />
+        android:text="@string/reconnects_at_label"
+        app:layout_constraintTop_toBottomOf="@id/itemAlarmStartTimeLabel" />
 
     <TextView
-        android:id="@+id/itemAlarmReconnectsAtValiue"
+        android:id="@+id/itemAlarmEndTimeValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/itemAlarmReconnectsAtLabel"
-        app:layout_constraintTop_toTopOf="@id/itemAlarmReconnectsAtLabel"
+        app:layout_constraintStart_toEndOf="@id/itemAlarmEndTimeLabel"
+        app:layout_constraintTop_toTopOf="@id/itemAlarmEndTimeLabel"
         tools:text="10:30" />
 
     <ImageView
@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toStartOf="@+id/itemAlarmBluetooth"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemAlarmReconnectsAtLabel"
+        app:layout_constraintTop_toBottomOf="@+id/itemAlarmEndTimeLabel"
         tools:ignore="ContentDescription" />
 
     <ImageView

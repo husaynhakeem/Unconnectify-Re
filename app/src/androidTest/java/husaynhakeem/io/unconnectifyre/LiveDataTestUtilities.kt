@@ -1,4 +1,4 @@
-package husaynhakeem.io.unconnectifyre.utilities
+package husaynhakeem.io.unconnectifyre
 
 import android.arch.lifecycle.LiveData
 import java.util.concurrent.CountDownLatch

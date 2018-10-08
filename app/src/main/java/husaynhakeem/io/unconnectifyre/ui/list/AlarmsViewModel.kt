@@ -9,4 +9,12 @@ import husaynhakeem.io.unconnectifyre.data.repository.AlarmsRepository
 class AlarmsViewModel(private val alarmsRepository: AlarmsRepository) : ViewModel() {
 
     val alarms: LiveData<List<Alarm>> = alarmsRepository.getAllAlarms()
+
+    fun createAlarm(alarm: Alarm) {
+        alarmsRepository.createAlarm(alarm)
+    }
+
+    fun deleteAlarm(alarmId: Int) {
+        alarmsRepository.deleteAlarm(alarmId)
+    }
 }

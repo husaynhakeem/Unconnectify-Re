@@ -8,7 +8,7 @@ import husaynhakeem.io.unconnectifyre.data.database.Alarm
 import husaynhakeem.io.unconnectifyre.data.database.AlarmDao
 import husaynhakeem.io.unconnectifyre.data.database.AlarmDatabase
 import husaynhakeem.io.unconnectifyre.data.database.Time
-import husaynhakeem.io.unconnectifyre.utilities.getValue
+import husaynhakeem.io.unconnectifyre.getValue
 import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before

@@ -2,8 +2,13 @@
     <string name="app_name">UnconnectifyRe</string>
     <string name="alarms_empty_title">No alarms</string>
     <string name="alarms_empty_message">Start adding alarms using the button below</string>
-    <string name="disconnects_at_label">Disconnects at: </string>
-    <string name="connects_at_label">Reconnects at:</string>
+
+    <string name="disconnects_at_label">Disconnects at:</string>
+    <string name="disconnects_at_empty_value">--:--</string>
+
+    <string name="reconnects_at_label">Reconnects at:</string>
+    <string name="reconnects_at_empty_value">--:--</string>
+
     <string name="sunday">S</string>
     <string name="monday">M</string>
     <string name="tuesday">T</string>
@@ -11,4 +16,8 @@
     <string name="thursday">T</string>
     <string name="friday">F</string>
     <string name="saturday">S</string>
+    <string name="create_alarm_button">Create</string>
+    <string name="create_alarm_error">fill in the start and end times</string>
+
+    <string name="time_format">%1$s%2$s%3$s</string>
 </resources>

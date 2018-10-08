@@ -1,6 +1,7 @@
 package husaynhakeem.io.unconnectifyre.data.converter
 
 import android.arch.persistence.room.TypeConverter
+import husaynhakeem.io.unconnectifyre.utilities.COMMA
 
 
 class IntegerListConverter {
@@ -10,7 +11,7 @@ class IntegerListConverter {
         values.forEachIndexed { index, value ->
             append(value)
             if (index < values.size - 1) {
-                append(INTEGERS_SEPARATOR)
+                append(COMMA)
             }
         }
         toString()
@@ -21,12 +22,8 @@ class IntegerListConverter {
         if (s.isBlank()) {
             return emptyList()
         }
-        return s.split(INTEGERS_SEPARATOR)
+        return s.split(COMMA)
                 .map { it.toInt() }
                 .toList()
-    }
-
-    companion object {
-        private const val INTEGERS_SEPARATOR = ","
     }
 }

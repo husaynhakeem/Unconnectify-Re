@@ -8,12 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import husaynhakeem.io.unconnectifyre.R
-import husaynhakeem.io.unconnectifyre.ui.createalarm.CreateAlarmFragment
+import husaynhakeem.io.unconnectifyre.data.database.Alarm
+import husaynhakeem.io.unconnectifyre.ui.dialog.AlarmFormDialog
+import husaynhakeem.io.unconnectifyre.ui.dialog.CreateAlarmDialog
 import kotlinx.android.synthetic.main.fragment_alarms.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
-class AlarmsFragment : Fragment() {
+class AlarmsFragment : Fragment(), AlarmFormDialog.Listener {
 
     private val viewModel: AlarmsViewModel by viewModel()
     private val adapter: AlarmsAdapter = AlarmsAdapter(mutableListOf())
@@ -55,9 +57,14 @@ class AlarmsFragment : Fragment() {
     }
 
     private fun navigateToCreateAlarmScreen() {
-        activity?.supportFragmentManager
-                ?.beginTransaction()
-                ?.replace(R.id.mainContent, CreateAlarmFragment())
-                ?.commit()
+        CreateAlarmDialog.newInstance(this).show(fragmentManager, CreateAlarmDialog.TAG)
+    }
+
+    override fun createAlarm(alarm: Alarm) {
+        viewModel.createAlarm(alarm)
+    }
+
+    override fun deleteAlarm(alarmId: Int) {
+        viewModel.deleteAlarm(alarmId)
     }
 }
