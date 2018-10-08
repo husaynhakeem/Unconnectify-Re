@@ -2,7 +2,7 @@ package husaynhakeem.io.unconnectifyre.data.converter
 
 import android.arch.persistence.room.TypeConverter
 import android.util.Log
-import husaynhakeem.io.unconnectifyre.data.Time
+import husaynhakeem.io.unconnectifyre.data.database.Time
 import husaynhakeem.io.unconnectifyre.extensions.TAG
 
 

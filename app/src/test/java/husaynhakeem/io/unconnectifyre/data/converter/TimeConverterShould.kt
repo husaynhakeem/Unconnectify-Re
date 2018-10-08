@@ -1,6 +1,6 @@
 package husaynhakeem.io.unconnectifyre.data.converter
 
-import husaynhakeem.io.unconnectifyre.data.Time
+import husaynhakeem.io.unconnectifyre.data.database.Time
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

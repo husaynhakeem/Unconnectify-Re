@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">UnconnectifyRe</string>
+    <string name="alarms_empty_title">No alarms</string>
+    <string name="alarms_empty_message">Start adding alarms using the button below</string>
 </resources>

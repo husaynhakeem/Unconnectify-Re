@@ -1,4 +1,4 @@
-package husaynhakeem.io.unconnectifyre.data
+package husaynhakeem.io.unconnectifyre.data.database
 
 import android.arch.lifecycle.LiveData
 import android.arch.persistence.room.Dao
@@ -17,7 +17,7 @@ interface AlarmDao {
     fun findAlarmById(id: Int): LiveData<Alarm>
 
     @Insert
-    fun createAlarm(alarm: Alarm)
+    fun createAlarm(alarms: Alarm)
 
     @Update
     fun updateAlarm(alarm: Alarm)
