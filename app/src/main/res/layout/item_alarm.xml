@@ -1,6 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:padding="@dimen/space_default">
+
+    <TextView
+        android:id="@+id/itemAlarmDisconnectsAtLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/disconnects_at_label" />
+
+    <TextView
+        android:id="@+id/itemAlarmDisconnectsAtValiue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/itemAlarmDisconnectsAtLabel"
+        tools:text="10:00" />
+
+    <TextView
+        android:id="@+id/itemAlarmReconnectsAtLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/connects_at_label"
+        app:layout_constraintTop_toBottomOf="@id/itemAlarmDisconnectsAtLabel" />
+
+    <TextView
+        android:id="@+id/itemAlarmReconnectsAtValiue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/itemAlarmReconnectsAtLabel"
+        app:layout_constraintTop_toTopOf="@id/itemAlarmReconnectsAtLabel"
+        tools:text="10:30" />
+
+    <ImageView
+        android:id="@+id/itemAlarmWifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_default"
+        android:src="@drawable/ic_wifi"
+        app:layout_constraintEnd_toStartOf="@+id/itemAlarmBluetooth"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemAlarmReconnectsAtLabel"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/itemAlarmBluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_bluetooth"
+        app:layout_constraintEnd_toStartOf="@+id/itemAlarmHotspot"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/itemAlarmWifi"
+        app:layout_constraintTop_toTopOf="@+id/itemAlarmWifi"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/itemAlarmHotspot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_hotspot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/itemAlarmBluetooth"
+        app:layout_constraintTop_toTopOf="@+id/itemAlarmWifi"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/itemAlarmSunday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_default"
+        android:text="@string/sunday"
+        app:layout_constraintEnd_toStartOf="@+id/itemAlarmMonday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemAlarmWifi" />
+
+    <TextView
+        android:id="@+id/itemAlarmMonday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/monday"
+        app:layout_constraintEnd_toStartOf="@+id/itemAlarmTuesday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/itemAlarmSunday"
+        app:layout_constraintTop_toTopOf="@+id/itemAlarmSunday" />
+
+    <TextView
+        android:id="@+id/itemAlarmTuesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tuesday"
+        app:layout_constraintEnd_toStartOf="@+id/itemAlarmWednesday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/itemAlarmMonday"
+        app:layout_constraintTop_toTopOf="@+id/itemAlarmSunday" />
+
+    <TextView
+        android:id="@+id/itemAlarmWednesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/wednesday"
+        app:layout_constraintEnd_toStartOf="@+id/itemAlarmThursday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/itemAlarmTuesday"
+        app:layout_constraintTop_toTopOf="@+id/itemAlarmSunday" />
+
+    <TextView
+        android:id="@+id/itemAlarmThursday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/thursday"
+        app:layout_constraintEnd_toStartOf="@+id/itemAlarmFriday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/itemAlarmWednesday"
+        app:layout_constraintTop_toTopOf="@+id/itemAlarmSunday" />
+
+    <TextView
+        android:id="@+id/itemAlarmFriday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/friday"
+        app:layout_constraintEnd_toStartOf="@+id/itemAlarmSaturday"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/itemAlarmThursday"
+        app:layout_constraintTop_toTopOf="@+id/itemAlarmSunday" />
+
+    <TextView
+        android:id="@+id/itemAlarmSaturday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/saturday"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/itemAlarmFriday"
+        app:layout_constraintTop_toTopOf="@+id/itemAlarmSunday" />
 
 </android.support.constraint.ConstraintLayout>

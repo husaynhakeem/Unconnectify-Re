@@ -30,6 +30,7 @@ ext {
     junitVersion = '4.12'
     koinVersion = '1.0.1'
     supportVersion = '27.1.1'
+    swipeRevealVersion = '1.4.1'
 }
 
 dependencies {
@@ -51,6 +52,9 @@ dependencies {
 
     // Dependency injection
     implementation "org.koin:koin-android-viewmodel:$koinVersion"
+
+    // Swipe reveal
+    implementation "com.chauthai.swipereveallayout:swipe-reveal-layout:$swipeRevealVersion"
 
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

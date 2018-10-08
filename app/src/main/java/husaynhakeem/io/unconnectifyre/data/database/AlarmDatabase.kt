@@ -25,8 +25,32 @@ abstract class AlarmDatabase : RoomDatabase() {
         private val dummyAlarms = arrayOf(
                 Alarm(startTime = Time(hour = 10, minute = 0),
                         endTime = Time(hour = 10, minute = 45),
+                        connectivities = listOf(Connectivity.WIFI.value, Connectivity.HOTSPOT.value),
+                        days = listOf(Day.SUNDAY.value)),
+                Alarm(startTime = Time(hour = 11, minute = 0),
+                        endTime = Time(hour = 11, minute = 45),
+                        connectivities = listOf(Connectivity.BLUETOOTH.value, Connectivity.HOTSPOT.value),
+                        days = listOf(Day.MONDAY.value)),
+                Alarm(startTime = Time(hour = 12, minute = 0),
+                        endTime = Time(hour = 12, minute = 45),
                         connectivities = listOf(Connectivity.WIFI.value),
-                        days = listOf(Day.SUNDAY.value))
+                        days = listOf(Day.TUESDAY.value)),
+                Alarm(startTime = Time(hour = 13, minute = 0),
+                        endTime = Time(hour = 13, minute = 45),
+                        connectivities = listOf(Connectivity.HOTSPOT.value),
+                        days = listOf(Day.WEDNESDAY.value)),
+                Alarm(startTime = Time(hour = 14, minute = 0),
+                        endTime = Time(hour = 14, minute = 45),
+                        connectivities = listOf(Connectivity.BLUETOOTH.value),
+                        days = listOf(Day.THURSDAY.value)),
+                Alarm(startTime = Time(hour = 15, minute = 0),
+                        endTime = Time(hour = 15, minute = 45),
+                        connectivities = listOf(Connectivity.WIFI.value, Connectivity.HOTSPOT.value),
+                        days = listOf(Day.FRIDAY.value)),
+                Alarm(startTime = Time(hour = 16, minute = 0),
+                        endTime = Time(hour = 16, minute = 45),
+                        connectivities = listOf(Connectivity.WIFI.value),
+                        days = listOf(Day.MONDAY.value, Day.TUESDAY.value, Day.WEDNESDAY.value, Day.THURSDAY.value, Day.FRIDAY.value))
         )
 
         @Volatile

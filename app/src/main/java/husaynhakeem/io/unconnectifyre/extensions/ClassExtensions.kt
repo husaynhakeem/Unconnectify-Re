@@ -2,4 +2,4 @@ package husaynhakeem.io.unconnectifyre.extensions
 
 
 val Any.TAG: String
-    get() = Any::class.java.simpleName
+    get() = this::class.java.simpleName

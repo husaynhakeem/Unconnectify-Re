@@ -17,4 +17,10 @@ data class Alarm(
 data class Time(
         @PrimaryKey(autoGenerate = true) val id: Int = 0,
         val hour: Int,
-        val minute: Int)
+        val minute: Int) {
+
+    override fun toString(): String {
+        val formattedMinute = if (minute < 10) "0$minute" else minute.toString()
+        return "$hour:$formattedMinute"
+    }
+}
