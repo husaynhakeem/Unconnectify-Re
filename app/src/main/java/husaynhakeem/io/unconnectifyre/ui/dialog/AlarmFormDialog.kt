@@ -122,6 +122,7 @@ abstract class AlarmFormDialog : DialogFragment() {
 
     interface Listener {
         fun createAlarm(alarm: Alarm)
+        fun updateAlarm(alarm: Alarm)
         fun deleteAlarm(alarmId: Int)
     }
 }

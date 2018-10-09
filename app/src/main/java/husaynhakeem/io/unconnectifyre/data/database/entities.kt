@@ -7,7 +7,7 @@ import android.arch.persistence.room.PrimaryKey
 
 @Entity
 data class Alarm(
-        @PrimaryKey(autoGenerate = true) val id: Int = 0,
+        @PrimaryKey(autoGenerate = true) var id: Int = 0,
         @ColumnInfo(name = "start_time") val startTime: Time,
         @ColumnInfo(name = "end_time") val endTime: Time,
         val connectivities: List<Int>,
@@ -15,7 +15,7 @@ data class Alarm(
 
 @Entity
 data class Time(
-        @PrimaryKey(autoGenerate = true) val id: Int = 0,
+        @PrimaryKey(autoGenerate = true) var id: Int = 0,
         val hour: Int,
         val minute: Int) {
 

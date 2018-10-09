@@ -17,4 +17,8 @@ class AlarmsViewModel(private val alarmsRepository: AlarmsRepository) : ViewMode
     fun deleteAlarm(alarmId: Int) {
         alarmsRepository.deleteAlarm(alarmId)
     }
+
+    fun updateAlarm(alarm: Alarm) {
+        alarmsRepository.updateAlarm(alarm)
+    }
 }

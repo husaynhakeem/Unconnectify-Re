@@ -27,4 +27,8 @@ class AlarmsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         itemView.itemAlarmFriday.toggleBackground(alarm.days.contains(Day.FRIDAY.value))
         itemView.itemAlarmSaturday.toggleBackground(alarm.days.contains(Day.SATURDAY.value))
     }
+
+    fun setOnClickListener(block: () -> Unit) {
+        itemView.itemAlarmContainer.setOnClickListener { block.invoke() }
+    }
 }

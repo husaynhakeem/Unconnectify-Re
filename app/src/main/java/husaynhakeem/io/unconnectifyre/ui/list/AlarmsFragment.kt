@@ -11,14 +11,15 @@ import husaynhakeem.io.unconnectifyre.R
 import husaynhakeem.io.unconnectifyre.data.database.Alarm
 import husaynhakeem.io.unconnectifyre.ui.dialog.AlarmFormDialog
 import husaynhakeem.io.unconnectifyre.ui.dialog.CreateAlarmDialog
+import husaynhakeem.io.unconnectifyre.ui.dialog.UpdateAlarmDialog
 import kotlinx.android.synthetic.main.fragment_alarms.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
-class AlarmsFragment : Fragment(), AlarmFormDialog.Listener {
+class AlarmsFragment : Fragment(), AlarmFormDialog.Listener, AlarmsAdapter.Listener {
 
     private val viewModel: AlarmsViewModel by viewModel()
-    private val adapter: AlarmsAdapter = AlarmsAdapter(mutableListOf())
+    private val adapter: AlarmsAdapter = AlarmsAdapter(this, mutableListOf())
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_alarms, container, false)
@@ -64,7 +65,15 @@ class AlarmsFragment : Fragment(), AlarmFormDialog.Listener {
         viewModel.createAlarm(alarm)
     }
 
+    override fun updateAlarm(alarm: Alarm) {
+        viewModel.updateAlarm(alarm)
+    }
+
     override fun deleteAlarm(alarmId: Int) {
         viewModel.deleteAlarm(alarmId)
+    }
+
+    override fun onClick(alarm: Alarm) {
+        UpdateAlarmDialog.newInstance(this, alarm).show(fragmentManager, UpdateAlarmDialog.TAG)
     }
 }
