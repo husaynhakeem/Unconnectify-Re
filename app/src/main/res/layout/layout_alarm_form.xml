@@ -8,64 +8,68 @@
 
     <TextView
         android:id="@+id/alarmFormStartTimeLabel"
+        style="@style/TimeLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/disconnects_at_label"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/alarmFormStartTimeValue" />
 
     <TextView
         android:id="@+id/alarmFormStartTimeValue"
+        style="@style/TimeValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/disconnects_at_empty_value"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
         app:layout_constraintStart_toEndOf="@id/alarmFormStartTimeLabel" />
 
     <TextView
         android:id="@+id/alarmFormEndTimeLabel"
+        style="@style/TimeLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/reconnects_at_label"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
-        app:layout_constraintTop_toBottomOf="@id/alarmFormStartTimeLabel" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/alarmFormEndTimeValue" />
 
     <TextView
         android:id="@+id/alarmFormEndTimeValue"
+        style="@style/TimeValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/reconnects_at_empty_value"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
         app:layout_constraintStart_toEndOf="@id/alarmFormEndTimeLabel"
-        app:layout_constraintTop_toTopOf="@id/alarmFormEndTimeLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/alarmFormStartTimeValue" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/alarmFormWifi"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_large"
-        android:src="@drawable/ic_wifi"
+        android:src="@drawable/ic_wifi_stateful"
         app:layout_constraintEnd_toStartOf="@+id/alarmFormBluetooth"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/alarmFormEndTimeLabel"
+        app:layout_constraintTop_toBottomOf="@id/alarmFormEndTimeValue"
         tools:ignore="ContentDescription" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/alarmFormBluetooth"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_bluetooth"
+        android:src="@drawable/ic_bluetooth_stateful"
         app:layout_constraintEnd_toStartOf="@+id/alarmFormHotspot"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/alarmFormWifi"
         app:layout_constraintTop_toTopOf="@id/alarmFormWifi"
         tools:ignore="ContentDescription" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/alarmFormHotspot"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_hotspot"
+        android:src="@drawable/ic_hotspot_stateful"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/alarmFormBluetooth"
@@ -74,11 +78,10 @@
 
     <TextView
         android:id="@+id/alarmFormSunday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_large"
+        style="@style/Day"
+        android:layout_marginTop="@dimen/space_xlarge"
+        android:background="@drawable/background_stateful"
         android:text="@string/sunday"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toStartOf="@+id/alarmFormMonday"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,10 +89,8 @@
 
     <TextView
         android:id="@+id/alarmFormMonday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Day"
         android:text="@string/monday"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toStartOf="@+id/alarmFormTuesday"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/alarmFormSunday"
@@ -97,10 +98,8 @@
 
     <TextView
         android:id="@+id/alarmFormTuesday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Day"
         android:text="@string/tuesday"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toStartOf="@+id/alarmFormWednesday"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/alarmFormMonday"
@@ -108,10 +107,8 @@
 
     <TextView
         android:id="@+id/alarmFormWednesday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Day"
         android:text="@string/wednesday"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toStartOf="@+id/alarmFormThursday"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/alarmFormTuesday"
@@ -119,10 +116,8 @@
 
     <TextView
         android:id="@+id/alarmFormThursday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Day"
         android:text="@string/thursday"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toStartOf="@+id/alarmFormFriday"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/alarmFormWednesday"
@@ -130,10 +125,8 @@
 
     <TextView
         android:id="@+id/alarmFormFriday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Day"
         android:text="@string/friday"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toStartOf="@+id/alarmFormSaturday"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/alarmFormThursday"
@@ -141,10 +134,8 @@
 
     <TextView
         android:id="@+id/alarmFormSaturday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Day"
         android:text="@string/saturday"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/alarmFormFriday"
@@ -155,7 +146,7 @@
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_large"
+        android:layout_marginTop="@dimen/space_xxlarge"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/alarmFormSunday"
@@ -179,17 +170,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/alarmFormPositiveButton"
         tools:ignore="ContentDescription" />
-
-    <android.support.constraint.Group
-        android:id="@+id/alarmFormStartTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="createAlarmStartTimeLabel,createAlarmStartTimeValue" />
-
-    <android.support.constraint.Group
-        android:id="@+id/alarmFormEndTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="createAlarmEndTimeValue,createAlarmEndTimeLabel" />
 
 </android.support.constraint.ConstraintLayout>

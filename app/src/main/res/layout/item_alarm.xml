@@ -1,142 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="@dimen/space_default">
+    app:cardUseCompatPadding="true"
+    app:contentPaddingBottom="@dimen/space_large"
+    app:contentPaddingLeft="@dimen/space_default"
+    app:contentPaddingRight="@dimen/space_default"
+    app:contentPaddingTop="@dimen/space_large">
 
-    <TextView
-        android:id="@+id/itemAlarmStartTimeLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/disconnects_at_label" />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/itemAlarmStartTimeValiue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/itemAlarmStartTimeLabel"
-        tools:text="10:00" />
+        <TextView
+            android:id="@+id/itemAlarmStartTimeLabel"
+            style="@style/TimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/disconnects_at_label"
+            app:layout_constraintBaseline_toBaselineOf="@+id/itemAlarmStartTimeValue" />
 
-    <TextView
-        android:id="@+id/itemAlarmEndTimeLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reconnects_at_label"
-        app:layout_constraintTop_toBottomOf="@id/itemAlarmStartTimeLabel" />
+        <TextView
+            android:id="@+id/itemAlarmStartTimeValue"
+            style="@style/TimeValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/itemAlarmStartTimeLabel"
+            tools:text="10:00" />
 
-    <TextView
-        android:id="@+id/itemAlarmEndTimeValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/itemAlarmEndTimeLabel"
-        app:layout_constraintTop_toTopOf="@id/itemAlarmEndTimeLabel"
-        tools:text="10:30" />
+        <TextView
+            android:id="@+id/itemAlarmEndTimeLabel"
+            style="@style/TimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reconnects_at_label"
+            app:layout_constraintBaseline_toBaselineOf="@+id/itemAlarmEndTimeValue" />
 
-    <ImageView
-        android:id="@+id/itemAlarmWifi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_default"
-        android:src="@drawable/ic_wifi"
-        app:layout_constraintEnd_toStartOf="@+id/itemAlarmBluetooth"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemAlarmEndTimeLabel"
-        tools:ignore="ContentDescription" />
+        <TextView
+            android:id="@+id/itemAlarmEndTimeValue"
+            style="@style/TimeValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/itemAlarmEndTimeLabel"
+            app:layout_constraintTop_toBottomOf="@id/itemAlarmStartTimeValue"
+            tools:text="10:30" />
 
-    <ImageView
-        android:id="@+id/itemAlarmBluetooth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_bluetooth"
-        app:layout_constraintEnd_toStartOf="@+id/itemAlarmHotspot"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/itemAlarmWifi"
-        app:layout_constraintTop_toTopOf="@+id/itemAlarmWifi"
-        tools:ignore="ContentDescription" />
+        <ImageView
+            android:id="@+id/itemAlarmWifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_large"
+            android:src="@drawable/ic_wifi_stateful"
+            app:layout_constraintEnd_toStartOf="@+id/itemAlarmBluetooth"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemAlarmEndTimeValue"
+            tools:ignore="ContentDescription" />
 
-    <ImageView
-        android:id="@+id/itemAlarmHotspot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_hotspot"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/itemAlarmBluetooth"
-        app:layout_constraintTop_toTopOf="@+id/itemAlarmWifi"
-        tools:ignore="ContentDescription" />
+        <ImageView
+            android:id="@+id/itemAlarmBluetooth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_bluetooth_stateful"
+            app:layout_constraintEnd_toStartOf="@+id/itemAlarmHotspot"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/itemAlarmWifi"
+            app:layout_constraintTop_toTopOf="@+id/itemAlarmWifi"
+            tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/itemAlarmSunday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_default"
-        android:text="@string/sunday"
-        app:layout_constraintEnd_toStartOf="@+id/itemAlarmMonday"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemAlarmWifi" />
+        <ImageView
+            android:id="@+id/itemAlarmHotspot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_hotspot_stateful"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/itemAlarmBluetooth"
+            app:layout_constraintTop_toTopOf="@+id/itemAlarmWifi"
+            tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/itemAlarmMonday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/monday"
-        app:layout_constraintEnd_toStartOf="@+id/itemAlarmTuesday"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/itemAlarmSunday"
-        app:layout_constraintTop_toTopOf="@+id/itemAlarmSunday" />
+        <TextView
+            android:id="@+id/itemAlarmSunday"
+            style="@style/Day"
+            android:layout_marginTop="@dimen/space_xlarge"
+            android:text="@string/sunday"
+            app:layout_constraintEnd_toStartOf="@+id/itemAlarmMonday"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemAlarmWifi" />
 
-    <TextView
-        android:id="@+id/itemAlarmTuesday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tuesday"
-        app:layout_constraintEnd_toStartOf="@+id/itemAlarmWednesday"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/itemAlarmMonday"
-        app:layout_constraintTop_toTopOf="@+id/itemAlarmSunday" />
+        <TextView
+            android:id="@+id/itemAlarmMonday"
+            style="@style/Day"
+            android:text="@string/monday"
+            app:layout_constraintEnd_toStartOf="@+id/itemAlarmTuesday"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/itemAlarmSunday"
+            app:layout_constraintTop_toTopOf="@+id/itemAlarmSunday"
+            tools:background="@drawable/background_activated" />
 
-    <TextView
-        android:id="@+id/itemAlarmWednesday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/wednesday"
-        app:layout_constraintEnd_toStartOf="@+id/itemAlarmThursday"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/itemAlarmTuesday"
-        app:layout_constraintTop_toTopOf="@+id/itemAlarmSunday" />
+        <TextView
+            android:id="@+id/itemAlarmTuesday"
+            style="@style/Day"
+            android:text="@string/tuesday"
+            app:layout_constraintEnd_toStartOf="@+id/itemAlarmWednesday"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/itemAlarmMonday"
+            app:layout_constraintTop_toTopOf="@+id/itemAlarmSunday" />
 
-    <TextView
-        android:id="@+id/itemAlarmThursday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/thursday"
-        app:layout_constraintEnd_toStartOf="@+id/itemAlarmFriday"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/itemAlarmWednesday"
-        app:layout_constraintTop_toTopOf="@+id/itemAlarmSunday" />
+        <TextView
+            android:id="@+id/itemAlarmWednesday"
+            style="@style/Day"
+            android:text="@string/wednesday"
+            app:layout_constraintEnd_toStartOf="@+id/itemAlarmThursday"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/itemAlarmTuesday"
+            app:layout_constraintTop_toTopOf="@+id/itemAlarmSunday" />
 
-    <TextView
-        android:id="@+id/itemAlarmFriday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/friday"
-        app:layout_constraintEnd_toStartOf="@+id/itemAlarmSaturday"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/itemAlarmThursday"
-        app:layout_constraintTop_toTopOf="@+id/itemAlarmSunday" />
+        <TextView
+            android:id="@+id/itemAlarmThursday"
+            style="@style/Day"
+            android:text="@string/thursday"
+            app:layout_constraintEnd_toStartOf="@+id/itemAlarmFriday"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/itemAlarmWednesday"
+            app:layout_constraintTop_toTopOf="@+id/itemAlarmSunday" />
 
-    <TextView
-        android:id="@+id/itemAlarmSaturday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/saturday"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/itemAlarmFriday"
-        app:layout_constraintTop_toTopOf="@+id/itemAlarmSunday" />
+        <TextView
+            android:id="@+id/itemAlarmFriday"
+            style="@style/Day"
+            android:text="@string/friday"
+            app:layout_constraintEnd_toStartOf="@+id/itemAlarmSaturday"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/itemAlarmThursday"
+            app:layout_constraintTop_toTopOf="@+id/itemAlarmSunday" />
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/itemAlarmSaturday"
+            style="@style/Day"
+            android:text="@string/saturday"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/itemAlarmFriday"
+            app:layout_constraintTop_toTopOf="@+id/itemAlarmSunday" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

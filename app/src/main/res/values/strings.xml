@@ -20,4 +20,5 @@
     <string name="create_alarm_error">fill in the start and end times</string>
 
     <string name="time_format">%1$s%2$s%3$s</string>
+    <string name="repeat">Repeat</string>
 </resources>

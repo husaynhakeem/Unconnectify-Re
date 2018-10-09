@@ -11,4 +11,20 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
+    <style name="TimeLabel">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+    </style>
+
+    <style name="TimeValue">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Title</item>
+        <item name="android:padding">@dimen/space_default</item>
+    </style>
+
+    <style name="Day">
+        <item name="android:layout_width">@dimen/background_size</item>
+        <item name="android:layout_height">@dimen/background_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Title</item>
+    </style>
+
 </resources>

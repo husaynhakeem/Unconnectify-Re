@@ -3,4 +3,9 @@
     <dimen name="space_small">4dp</dimen>
     <dimen name="space_default">8dp</dimen>
     <dimen name="space_large">16dp</dimen>
+    <dimen name="space_xlarge">24dp</dimen>
+    <dimen name="space_xxlarge">32dp</dimen>
+    <dimen name="space_xxxlarge">48dp</dimen>
+
+    <dimen name="background_size">32dp</dimen>
 </resources>
