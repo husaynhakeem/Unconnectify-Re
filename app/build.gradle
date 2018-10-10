@@ -26,11 +26,14 @@ android {
 
 ext {
     architectureVersion = '1.1.1'
+    baristaVersion = '2.7.0'
     constraintLayoutVersion = '1.1.3'
     junitVersion = '4.12'
     koinVersion = '1.0.1'
     supportVersion = '27.1.1'
     swipeRevealVersion = '1.4.1'
+    testRulesVersion = '0.5'
+    testRunnerVersion = '1.0.2'
 }
 
 dependencies {
@@ -54,10 +57,13 @@ dependencies {
     // Dependency injection
     implementation "org.koin:koin-android-viewmodel:$koinVersion"
 
-    // Swipe reveal
-    implementation "com.chauthai.swipereveallayout:swipe-reveal-layout:$swipeRevealVersion"
-
     testImplementation "junit:junit:$junitVersion"
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation "com.android.support.test:runner:$testRunnerVersion"
+    androidTestImplementation("com.android.support.test:rules:$testRulesVersion") {
+        exclude module: 'support-annotations'
+    }
+    androidTestImplementation("com.schibsted.spain:barista:$baristaVersion") {
+        exclude group: 'com.android.support'
+        exclude group: 'org.jetbrains.kotlin'
+    }
 }

@@ -2,6 +2,7 @@ package husaynhakeem.io.unconnectifyre.ui.dialog
 
 import android.app.TimePickerDialog
 import android.os.Bundle
+import android.support.annotation.VisibleForTesting
 import android.support.v4.app.DialogFragment
 import android.view.LayoutInflater
 import android.view.View
@@ -95,7 +96,8 @@ abstract class AlarmFormDialog : DialogFragment() {
             alarmFormTuesday.isEnabled || alarmFormWednesday.isEnabled || alarmFormThursday.isEnabled ||
             alarmFormFriday.isEnabled || alarmFormSaturday.isEnabled
 
-    protected fun buildAlarm(): Alarm {
+    @VisibleForTesting
+    fun buildAlarm(): Alarm {
         val startTime = fromDisplayedTimeToTime(alarmFormStartTimeValue.text.toString())
         val endTime = fromDisplayedTimeToTime(alarmFormEndTimeValue.text.toString())
         val connectivities = mutableListOf<Int>().apply {
