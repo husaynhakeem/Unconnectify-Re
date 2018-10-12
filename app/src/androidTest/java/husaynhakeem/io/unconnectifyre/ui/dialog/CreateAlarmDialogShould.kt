@@ -16,11 +16,7 @@ import com.schibsted.spain.barista.interaction.BaristaPickerInteractions.setTime
 import husaynhakeem.io.unconnectifyre.R
 import husaynhakeem.io.unconnectifyre.TestActivity
 import husaynhakeem.io.unconnectifyre.assertToastIsDisplayedWithMessage
-import husaynhakeem.io.unconnectifyre.data.Connectivity
-import husaynhakeem.io.unconnectifyre.data.Day
 import husaynhakeem.io.unconnectifyre.data.database.Alarm
-import org.junit.Assert.assertEquals
-import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -34,15 +30,9 @@ class CreateAlarmDialogShould {
     val rule = ActivityTestRule(TestActivity::class.java)
 
     private val listener = object : AlarmFormDialog.Listener {
-        override fun createAlarm(alarm: Alarm) {
-
-        }
-
-        override fun updateAlarm(alarm: Alarm) {
-        }
-
-        override fun deleteAlarm(alarmId: Int) {
-        }
+        override fun createAlarm(alarm: Alarm) {}
+        override fun updateAlarm(alarm: Alarm) {}
+        override fun deleteAlarm(alarmId: Int) {}
     }
     private val dialog = CreateAlarmDialog.newInstance(listener)
 
@@ -167,29 +157,6 @@ class CreateAlarmDialogShould {
         clickOn(R.id.alarmFormNeutralButton)
 
         assertNotExist(R.string.disconnects_at_label)
-    }
-
-    @Test
-    fun testAlarmCreation_whenPositiveButtonIsClicked() {
-        clickOn(R.id.alarmFormStartTimeValue)
-        setTimeOnPicker(10, 0)
-        clickOn(R.id.alarmFormEndTimeValue)
-        setTimeOnPicker(10, 30)
-        clickOn(R.id.alarmFormWifi)
-        clickOn(R.id.alarmFormSaturday)
-        clickOn(R.id.alarmFormSunday)
-
-        val alarm = dialog.buildAlarm()
-
-        assertEquals(10, alarm.startTime.hour)
-        assertEquals(0, alarm.startTime.minute)
-        assertEquals(10, alarm.endTime.hour)
-        assertEquals(30, alarm.endTime.minute)
-        assertEquals(1, alarm.connectivities.size)
-        assertTrue(alarm.connectivities.contains(Connectivity.WIFI.value))
-        assertEquals(2, alarm.days.size)
-        assertTrue(alarm.days.contains(Day.SATURDAY.value))
-        assertTrue(alarm.days.contains(Day.SUNDAY.value))
     }
 
     @Test

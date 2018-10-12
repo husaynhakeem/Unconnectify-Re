@@ -1,5 +1,6 @@
 package husaynhakeem.io.unconnectifyre.ui.dialog
 
+import android.annotation.SuppressLint
 import android.widget.TextView
 import husaynhakeem.io.unconnectifyre.R
 import husaynhakeem.io.unconnectifyre.data.Connectivity
@@ -14,6 +15,7 @@ class UpdateAlarmDialog : AlarmFormDialog() {
 
     private lateinit var alarm: Alarm
 
+    @SuppressLint("VisibleForTests")
     override fun setupView() {
         alarmFormStartTimeValue.text = formatTimeForDisplay(context!!, alarm.startTime.hour, alarm.startTime.minute)
         alarmFormEndTimeValue.text = formatTimeForDisplay(context!!, alarm.endTime.hour, alarm.endTime.minute)
