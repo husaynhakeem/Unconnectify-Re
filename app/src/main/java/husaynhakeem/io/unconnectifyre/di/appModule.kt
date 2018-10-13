@@ -20,10 +20,11 @@ val appModule = module {
     single<AlarmsRepository> { AlarmsRepository(get()) }
     single<AlarmDao> { AlarmDatabase.get(androidApplication()).alarmDao() }
 
-    single<AlarmScheduler> { AlarmScheduler(get(), get(), get(), get(), get()) }
+    single<AlarmScheduler> { AlarmScheduler(get()) }
+    single<WorkManager> { WorkManager.getInstance() }
+
     single<WifiController> { WifiController(androidApplication()) }
     single<CellularDataController> { CellularDataController(androidApplication()) }
     single<HotspotController> { HotspotController(androidApplication()) }
     single<BluetoothController> { BluetoothController() }
-    single<WorkManager> { WorkManager.getInstance() }
 }
