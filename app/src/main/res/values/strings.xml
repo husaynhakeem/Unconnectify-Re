@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">UnconnectifyRe</string>
+    <string name="app_name">Unconnectify-Re</string>
+
     <string name="alarms_empty_title">No alarms</string>
     <string name="alarms_empty_message">Start adding alarms using the button below</string>
 
@@ -17,11 +18,9 @@
     <string name="friday">F</string>
     <string name="saturday">S</string>
 
-
     <string name="create_alarm_button">Create</string>
     <string name="update_alarm_button">Update</string>
-    <string name="create_alarm_error">fill in the start and end times</string>
+    <string name="create_alarm_error">Fill in the start and end times</string>
 
     <string name="time_format">%1$s%2$s%3$s</string>
-    <string name="repeat">Repeat</string>
 </resources>

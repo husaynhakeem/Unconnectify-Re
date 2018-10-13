@@ -16,8 +16,8 @@ import husaynhakeem.io.unconnectifyre.data.database.Alarm
 import husaynhakeem.io.unconnectifyre.extensions.addIf
 import husaynhakeem.io.unconnectifyre.utilities.formatTimeForDisplay
 import husaynhakeem.io.unconnectifyre.utilities.fromDisplayedTimeToTime
-import husaynhakeem.io.unconnectifyre.utilities.toggleActivation
-import husaynhakeem.io.unconnectifyre.utilities.toggleBackground
+import husaynhakeem.io.unconnectifyre.extensions.toggleActivation
+import husaynhakeem.io.unconnectifyre.extensions.toggleBackground
 import kotlinx.android.synthetic.main.layout_alarm_form.*
 
 
@@ -43,21 +43,23 @@ abstract class AlarmFormDialog : DialogFragment() {
 
     private fun setupListeners() {
         alarmFormStartTimeValue.setOnClickListener {
+            val time = fromDisplayedTimeToTime(alarmFormStartTimeValue.text.toString())
             TimePickerDialog(context,
                     TimePickerDialog.OnTimeSetListener { _, hour, minute ->
                         alarmFormStartTimeValue.text = formatTimeForDisplay(context!!, hour, minute)
                     },
-                    0,
-                    0,
+                    time.hour,
+                    time.minute,
                     true).show()
         }
         alarmFormEndTimeValue.setOnClickListener {
+            val time = fromDisplayedTimeToTime(alarmFormEndTimeValue.text.toString())
             TimePickerDialog(context,
                     TimePickerDialog.OnTimeSetListener { _, hour, minute ->
                         alarmFormEndTimeValue.text = formatTimeForDisplay(context!!, hour, minute)
                     },
-                    0,
-                    0,
+                    time.hour,
+                    time.minute,
                     true)
                     .show()
         }

@@ -11,7 +11,6 @@ fun formatTimeForDisplay(context: Context, hour: Int, minute: Int): String {
     return context.getString(R.string.time_format, formattedHour, COLON, formattedMinute)
 }
 
-
 /**
  * @displayedTime Time in the format hh:mm
  */

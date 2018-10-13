@@ -7,7 +7,7 @@ import husaynhakeem.io.unconnectifyre.data.Connectivity
 import husaynhakeem.io.unconnectifyre.data.Day
 import husaynhakeem.io.unconnectifyre.data.database.Alarm
 import husaynhakeem.io.unconnectifyre.utilities.formatTimeForDisplay
-import husaynhakeem.io.unconnectifyre.utilities.toggleBackground
+import husaynhakeem.io.unconnectifyre.extensions.toggleBackground
 import kotlinx.android.synthetic.main.layout_alarm_form.*
 
 

@@ -1,4 +1,4 @@
-package husaynhakeem.io.unconnectifyre.utilities
+package husaynhakeem.io.unconnectifyre.extensions
 
 import android.support.test.InstrumentationRegistry
 import android.support.v4.content.ContextCompat

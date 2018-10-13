@@ -6,7 +6,7 @@ import husaynhakeem.io.unconnectifyre.data.database.AlarmDao
 import husaynhakeem.io.unconnectifyre.utilities.runOnIoThread
 
 
-class AlarmsRepository(val alarmDao: AlarmDao) {
+class AlarmsRepository(private val alarmDao: AlarmDao) {
 
     fun createAlarm(alarm: Alarm) {
         runOnIoThread {

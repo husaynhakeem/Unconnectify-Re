@@ -25,7 +25,6 @@ class ScheduleAlarmWorker : Worker(), KoinComponent {
                     .build()
             workManager.enqueue(request)
 
-
             Log.d(TAG, "ScheduleAlarmWorker.doWork(): End")
             WorkerResult.SUCCESS
         } catch (exception: Exception) {

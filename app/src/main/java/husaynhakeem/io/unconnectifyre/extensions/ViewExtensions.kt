@@ -1,4 +1,4 @@
-package husaynhakeem.io.unconnectifyre.utilities
+package husaynhakeem.io.unconnectifyre.extensions
 
 import android.support.v4.content.ContextCompat
 import android.view.View
