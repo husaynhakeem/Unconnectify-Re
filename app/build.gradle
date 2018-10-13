@@ -25,6 +25,7 @@ android {
 }
 
 ext {
+    accessPointVersion = '0.2.0'
     architectureVersion = '1.1.1'
     baristaVersion = '2.7.0'
     constraintLayoutVersion = '1.1.3'
@@ -34,6 +35,7 @@ ext {
     swipeRevealVersion = '1.4.1'
     testRulesVersion = '0.5'
     testRunnerVersion = '1.0.2'
+    workVersion = '1.0.0-alpha02'
 }
 
 dependencies {
@@ -53,6 +55,12 @@ dependencies {
     implementation "android.arch.lifecycle:viewmodel:$architectureVersion"
     implementation "android.arch.lifecycle:livedata:$architectureVersion"
     androidTestImplementation "android.arch.core:core-testing:$architectureVersion"
+
+    // Work manager
+    implementation "android.arch.work:work-runtime:$workVersion"
+
+    // Hotspot handling
+    implementation "cc.mvdan.accesspoint:library:$accessPointVersion"
 
     // Dependency injection
     implementation "org.koin:koin-android-viewmodel:$koinVersion"
