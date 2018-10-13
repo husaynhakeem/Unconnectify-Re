@@ -5,10 +5,7 @@ import androidx.work.OneTimeWorkRequest
 import androidx.work.WorkManager
 import husaynhakeem.io.unconnectifyre.data.database.Alarm
 import husaynhakeem.io.unconnectifyre.data.dayFrom
-import husaynhakeem.io.unconnectifyre.utilities.CONNECTIVITY_KEY
-import husaynhakeem.io.unconnectifyre.utilities.SHOULD_CONNECT_KEY
-import husaynhakeem.io.unconnectifyre.utilities.computeTimeUntil
-import husaynhakeem.io.unconnectifyre.utilities.runOnIoThread
+import husaynhakeem.io.unconnectifyre.utilities.*
 import java.util.concurrent.TimeUnit
 
 
@@ -44,17 +41,18 @@ class AlarmScheduler(private val workManager: WorkManager) {
 
     private fun buildWorkRequests(alarmJobs: List<AlarmJob>): List<OneTimeWorkRequest> {
         return alarmJobs.map {
-            OneTimeWorkRequest.Builder(ToggleConnectivityWorker::class.java)
+            OneTimeWorkRequest.Builder(ScheduleAlarmWorker::class.java)
                     .addTag(it.id.toString())
                     .setInitialDelay(it.delay, TimeUnit.SECONDS)
-                    .setInputData(buildInputData(it.connectivity, it.shouldConnect))
+                    .setInputData(buildInputData(it))
                     .build()
         }
     }
 
-    private fun buildInputData(connectivity: Int, shouldConnect: Boolean) =
+    private fun buildInputData(alarmJob: AlarmJob) =
             Data.Builder()
-                    .putInt(CONNECTIVITY_KEY, connectivity)
-                    .putBoolean(SHOULD_CONNECT_KEY, shouldConnect)
+                    .putInt(ALARM_ID_KEY, alarmJob.id)
+                    .putInt(CONNECTIVITY_KEY, alarmJob.connectivity)
+                    .putBoolean(SHOULD_CONNECT_KEY, alarmJob.shouldConnect)
                     .build()
 }

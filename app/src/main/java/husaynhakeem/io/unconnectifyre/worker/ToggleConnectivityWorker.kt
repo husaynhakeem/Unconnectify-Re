@@ -21,9 +21,11 @@ class ToggleConnectivityWorker : Worker(), KoinComponent {
     override fun doWork(): WorkerResult {
         return try {
             Log.d(TAG, "ToggleConnectivityWorker.doWork(): Begin")
+
             val connectivity = connectivityFrom(inputData.getInt(CONNECTIVITY_KEY, 0))
             val shouldConnect = inputData.getBoolean(SHOULD_CONNECT_KEY, true)
             mapConnectivityToJob(connectivity, shouldConnect).invoke()
+
             Log.d(TAG, "ToggleConnectivityWorker.doWork(): End")
             WorkerResult.SUCCESS
         } catch (exception: Exception) {
