@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/UnconnectifyRe.iml" filepath="$PROJECT_DIR$/UnconnectifyRe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unconnectify-Re.iml" filepath="$PROJECT_DIR$/Unconnectify-Re.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
